@@ -1,25 +1,19 @@
-#include "main.h"
+i#include "main.h"
 /**
-   * rot13 - encodes a string using rot13
-    * @s: input string.
-     * Return: the pointer to dest.
-      */
-char *rot13(char *s)
+*_strcmp - Compares pointers to two strings.
+* @s1: A pointer to the first string to be compared.
+* @s2: A pointer to the second string to be compared.
+*
+*Return: If str1 < str2, the negative difference of the first unmatched characters.
+*If str1 == str2, 0.
+*If str1 > str2, the positive difference of the first unmatched characters.
+*/
+int _strcmp(char *s1, char *s2)
 {
-int count = 0, i;
-char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-while (*(s + count) != '\0')
+while (*s1 && *s2 && *s1 == *s2)
 {
-for (i = 0; i < 52; i++)
-{
-if (*(s + count) == alphabet[i])
-{
-*(s + count) = rot13[i];
-break;
+s1++;
+s2++;
 }
-}
-count++;
-}
-return (s);
+return (*s1 - *s2);
 }
