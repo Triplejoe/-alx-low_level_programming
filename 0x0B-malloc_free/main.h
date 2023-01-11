@@ -1,5 +1,7 @@
 #ifndef MAIN_H                                              
 #define MAIN_H
+#include <stdio.h>
+#include <stdlib.h>
 int _putchar(char c);
 void free_grid(int **grid, int height);
 char *str_concat(char *s1, char *s2);
